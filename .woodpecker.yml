@@ -1,6 +1,7 @@
+# --backend-engine auto-detect | WOODPECKER_BACKEND=auto-detect
 steps:
-  build:
-    image: bash
+  backend:
+    image: docker.io/debian:stable-slim
     commands:
       - echo "hello"
       - sleep 2
@@ -8,3 +9,15 @@ steps:
       - sleep 2
       - echo "done"
       - sleep 2
+
+# --backend-engine local | WOODPECKER_BACKEND=local
+#steps:
+#  build:
+#    image: bash
+#    commands:
+#      - echo "hello"
+#      - sleep 2
+#      - echo "world"
+#      - sleep 2
+#      - echo "done"
+#      - sleep 2
