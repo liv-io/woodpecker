@@ -1,0 +1,10 @@
+steps:
+  build:
+    image: bash
+    commands:
+      - echo "hello"
+      - sleep 2
+      - echo "world"
+      - sleep 2
+      - echo "done"
+      - sleep 2
