@@ -1,7 +1,7 @@
 # --backend-engine auto-detect | WOODPECKER_BACKEND=auto-detect
 steps:
   backend:
-    image: docker.io/debian:stable-slim
+    image: debian:stable-slim
     commands:
       - echo "hello"
       - sleep 2
