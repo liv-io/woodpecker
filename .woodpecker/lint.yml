@@ -1,13 +1,11 @@
-#when:
-#  - event: [pull_request, tag]
-#  - event: push
-#    branch:
-#      - ${CI_REPO_DEFAULT_BRANCH}
-#      - release/*
-
+# --backend-engine auto-detect | WOODPECKER_BACKEND=auto-detect
 steps:
   build:
     image: debian:stable-slim
     commands:
-      - echo "Woodpecker: lint"
+      - echo "hello"
+      - sleep 2
+      - echo "world"
+      - sleep 2
+      - echo "done"
       - sleep 2
