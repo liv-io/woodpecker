@@ -1,4 +1,10 @@
-# --backend-engine auto-detect | WOODPECKER_BACKEND=auto-detect
+when:
+  - event: [pull_request, tag]
+  - event: push
+    branch:
+      - ${CI_REPO_DEFAULT_BRANCH}
+      - release/*
+
 steps:
   build:
     image: debian:stable-slim
