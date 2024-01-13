@@ -1,0 +1,48 @@
+# CHANGES
+
+This file lists changes made to the container. It follows semantic versioning
+guidelines. The content is sorted in reverse chronological order and formatted
+to allow easy grepping by scripts.
+
+The headers are:
+- bugs
+- changes
+- enhancements
+- features
+
+## 2.1.1-6 (2024-01-10)
+
+### Enhancements
+
+- Apply `shellcheck` and `shfmt`
+
+## 2.1.1-5 (2024-01-07)
+
+### Enhancements
+
+- Use `--ignore-missing` option in checksum command
+
+## 2.1.1-4 (2024-01-07)
+
+### Enhancements
+
+- Improve checksum command
+- Make `cmd.sh` executable
+
+## 2.1.1-3 (2024-01-06)
+
+### Enhancements
+
+- Remove `--system` option from `groupadd` and `useradd` commands
+
+## 2.1.1-2 (2024-01-02)
+
+### Features
+
+- Add parameter `WOODPECKER_ENVIRONMENT` (--environment)
+
+## 2.1.1-1 (2023-12-31)
+
+### Features
+
+- Initial release
