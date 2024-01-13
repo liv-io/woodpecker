@@ -1,13 +1,13 @@
-steps:
-  build:
-    image: debian:stable-slim
-    commands:
-      - sleep 1
-      - true
-
 when:
   - event: [pull_request, tag]
   - event: push
     branch:
       - ${CI_REPO_DEFAULT_BRANCH}
       - release/*
+
+steps:
+  build:
+    image: debian:stable-slim
+    commands:
+      - echo "Woodpecker: lint"
+      - sleep 2
