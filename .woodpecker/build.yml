@@ -6,13 +6,6 @@ steps:
   build:
     image: debian:stable-slim
     commands:
-      - echo '
-          ___  __  ________   ___
-         / _ )/ / / /  _/ /  / _ \
-        / _  / /_/ // // /__/ // /
-       /____/\____/___/____/____/
-
-      '
       - apt update
       - apt install -y --no-install-recommends ca-certificates git
       - git clone https://github.com/liv-io/woodpecker.git
