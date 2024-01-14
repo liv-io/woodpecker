@@ -6,22 +6,8 @@ steps:
   build:
     image: debian:stable-slim
     commands:
-      - #
-      - #    ___  __  ________   ___
-      - #   / _ )/ / / /  _/ /  / _ \
-      - #  / _  / /_/ // // /__/ // /
-      - # /____/\____/___/____/____/
-      - #
-      - #
-      - #echo "* Installing dependencies..."
-      - #apt update
-      - #apt install -y --no-install-recommends git
-      - #echo "* Cloning Git repository..."
-      - #git clone https://github.com/liv-io/woodpecker.git
-      - #echo "* Detecting OCI container to build..."
-      - #-----------------------------------------------------------------------
-      - #-------------------------------------------------------------------------------
-      - sleep 2
+      - apt update
+      - apt install -y --no-install-recommends git
 
 #CONTAINERS=$(git --no-pager diff --name-only HEAD~1 | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq)
 #if [ -n "${CONTAINERS}" ]; then echo "${CONTAINERS}"; echo "  No containers detected"; echo; fi
