@@ -1,0 +1,18 @@
+depends_on:
+  - lint
+  - build
+  - test
+  - deploy
+
+steps:
+  build:
+    image: debian:stable-slim
+    commands:
+      - echo "* Releasing code..."
+      - sleep 2
+      - echo "done"
+      - sleep 2
+
+#https://woodpecker-ci.org/plugins/GitHub%20Release
+
+#https://woodpecker-ci.org/plugins/MkDocs

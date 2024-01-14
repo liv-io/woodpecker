@@ -1,0 +1,56 @@
+depends_on:
+  - lint
+  - build
+
+steps:
+  build:
+    image: debian:stable-slim
+    commands:
+      - echo "* Linting code..."
+      - sleep 2
+      - echo "done"
+      - sleep 2
+
+#when:
+#  - event: [pull_request, tag]
+#  - event: push
+#    branch:
+#      - ${CI_REPO_DEFAULT_BRANCH}
+#      - release/*
+#      - renovate/*
+#
+#
+#steps:
+#  vendor:
+#    image: *golang_image
+#    commands:
+#      - go mod vendor
+#    when:
+#      - path:
+#          - <<: *when_path
+#          - '.woodpecker/**'
+#
+#  lint:
+#    depends_on:
+#      - vendor
+#    image: *golang_image
+#    commands:
+#      - make lint
+#    when: *when
+#
+#  lint-editorconfig:
+#    image: docker.io/mstruebing/editorconfig-checker:2.7.2
+#    when:
+#      - event: [pull_request, tag]
+#
+#  test:
+#    depends_on:
+#      - vendor
+#    image: *golang_image
+#    commands:
+#      - make test-agent
+#      - make test-server
+#      - make test-cli
+#      - make test-lib
+#    when:
+#      - path: *when_path
