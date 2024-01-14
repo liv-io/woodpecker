@@ -9,9 +9,7 @@ steps:
   build:
     image: debian:stable-slim
     commands:
-      - echo "hello"
-      - sleep 2
-      - echo "world"
+      - echo "* Linting code..."
       - sleep 2
       - echo "done"
       - sleep 2
