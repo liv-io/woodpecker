@@ -13,12 +13,12 @@ steps:
       - # /____/\____/___/____/____/
       - #
       - #
-      - echo "* Installing dependencies..."
-      - apt update
-      - apt install -y --no-install-recommends git
-      - echo "* Cloning Git repository..."
-      - git clone https://github.com/liv-io/woodpecker.git
-      - echo "* Detecting OCI container to build..."
+      - #echo "* Installing dependencies..."
+      - #apt update
+      - #apt install -y --no-install-recommends git
+      - #echo "* Cloning Git repository..."
+      - #git clone https://github.com/liv-io/woodpecker.git
+      - #echo "* Detecting OCI container to build..."
       - #-----------------------------------------------------------------------
       - #-------------------------------------------------------------------------------
       - sleep 2
