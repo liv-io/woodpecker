@@ -10,12 +10,8 @@ steps:
       - apt install -y --no-install-recommends ca-certificates git
       - git clone https://github.com/liv-io/woodpecker.git
       - cd ./woodpecker/
-      - echo ${CI_COMMIT_BRANCH}
-      - echo ${CI_COMMIT_SOURCE_BRANCH}
-      - echo ${CI_COMMIT_TARGET_BRANCH}
       - git checkout ${CI_COMMIT_BRANCH}
-      - git --no-pager diff --name-only HEAD~1 | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq
-      - CONTAINERS="container1 container2"
+      - CONTAINERS=$(git --no-pager diff --name-only HEAD~1 * | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq)
       - if [ -n "${CONTAINERS}" ]; then echo "${CONTAINERS}"; echo "No containers detected"; echo; fi
       - sleep 2
 
