@@ -6,6 +6,13 @@ steps:
   build:
     image: debian:stable-slim
     commands:
+      - #
+      - #    ___  __  ________   ___
+      - #   / _ )/ / / /  _/ /  / _ \
+      - #  / _  / /_/ // // /__/ // /
+      - # /____/\____/___/____/____/
+      - #
+      - #
       - apt update
       - apt install -y --no-install-recommends git
 
