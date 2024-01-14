@@ -6,22 +6,22 @@ steps:
   build:
     image: debian:stable-slim
     commands:
-      - apt update
-      - apt install -y --no-install-recommends ca-certificates git
-      - git clone https://github.com/liv-io/woodpecker.git
-      - cd ./woodpecker/
+      - apt update ; apt install -y --no-install-recommends ca-certificates git make
+      - git clone https://github.com/liv-io/woodpecker.git ; cd ./woodpecker/
       - git checkout ${CI_COMMIT_BRANCH}
-      - echo "print"
-      - git --no-pager diff --name-only HEAD~1 * | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq
-      - echo "write to file"
-      - git --no-pager diff --name-only HEAD~1 * | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq >./CONTAINERS
-      - echo "print file"
-      - echo "$(cat ./CONTAINERS)"
-      - echo "write to variable"
-      - CONTAINERS=$(git --no-pager diff --name-only HEAD~1 * | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq)
-      - echo "print variable"
-      - echo "${CONTAINERS}"
+      - for container in $(git --no-pager diff --name-only HEAD~1 * | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq) ; do make build container=${container} ; done
 
+
+#      - echo "print"
+#      - git --no-pager diff --name-only HEAD~1 * | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq
+#      - echo "write to file"
+#      - git --no-pager diff --name-only HEAD~1 * | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq >./CONTAINERS
+#      - echo "print file"
+#      - echo "$(cat ./CONTAINERS)"
+#      - echo "write to variable"
+#      - CONTAINERS=$(git --no-pager diff --name-only HEAD~1 * | sort -u | awk 'BEGIN {FS="/"} {print $1}' | uniq)
+#      - echo "print variable"
+#      - echo "${CONTAINERS}"
 #      - if [ -n "${CONTAINERS}" ]; then echo "${CONTAINERS}"; echo "No containers detected"; echo; fi
 
 #when:
