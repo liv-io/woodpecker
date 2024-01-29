@@ -6,7 +6,7 @@ steps:
   build:
     image: debian:stable-slim
     commands:
-      - apt update ; apt install -y --no-install-recommends ca-certificates git make podman
+      - apt update ; apt install -y --no-install-recommends ca-certificates catatonit dbus-user-session fuse-overlayfs git make podman rootlesskit slirp4netns
       - git clone https://github.com/liv-io/woodpecker.git ; cd ./woodpecker/
       - git switch ${CI_COMMIT_BRANCH}
       - echo "write variable"
